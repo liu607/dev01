@@ -5,21 +5,14 @@ import cn.com.scitc.graduationproject.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -42,9 +35,12 @@ public class TeacherController {
     CourseDao courseDao;
     @Autowired
     ExamDao examDao;
-    @Autowired StudentexamDao studentexamDao;
-    @Autowired StudentsubjectDao studentsubjectDao;
-    @Autowired PaperDao paperDao;
+    @Autowired
+    StudentexamDao studentexamDao;
+    @Autowired
+    StudentsubjectDao studentsubjectDao;
+    @Autowired
+    PaperDao paperDao;
     @RequestMapping("/TeacherManage")
     private String TeacherManage(){
         return "/teacher/manage";
@@ -53,6 +49,7 @@ public class TeacherController {
     private String addexam(){
         return "/teacher/addexam";
     }
+
 //    @RequestMapping("/StudentList")
 //    private String StudentList(HttpServletRequest request, HttpServletResponse response, Model model, Integer pageNum){
 //        HttpSession session = request.getSession(true);
